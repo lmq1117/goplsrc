@@ -3,10 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(Aaa())
-}
-
-func Aaa() int {
-	int := 2
-	return int * int
+	x := 1
+	p := &x
+	fmt.Println(*p)
+	*p = 2
+	fmt.Println(x)
 }
