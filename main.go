@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	x := 1
-	p := &x
-	fmt.Println(p)
-	fmt.Println(*p)
-	*p = 2
-	fmt.Println(x)
+	fmt.Println(f(), f(), f(), f())
+}
+
+func f() *int {
+	v := 1
+	return &v
 }
