@@ -3,10 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(f(), f(), f(), f())
+	var i int = 1
+	fmt.Println(&i, i)
+	incr(&i)
+	fmt.Println(&i, i)
+	incr(&i)
+	fmt.Println(&i, i)
+	incr(&i)
+	fmt.Println(&i, i)
+
 }
 
-func f() *int {
-	v := 1
-	return &v
+func incr(p *int) {
+	*p++
 }
