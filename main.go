@@ -1,19 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+	"strings"
+)
+
+var n = flag.Bool("n", false, "omit trailing newline")
+var sep = flag.String("s", " ", "separator")
 
 func main() {
-	var i int = 1
-	fmt.Println(&i, i)
-	incr(&i)
-	fmt.Println(&i, i)
-	incr(&i)
-	fmt.Println(&i, i)
-	incr(&i)
-	fmt.Println(&i, i)
-
-}
-
-func incr(p *int) {
-	*p++
+	flag.Parse()
+	fmt.Println(strings.Join(flag.Args(), *sep))
+	fmt.Println(*n)
+	if !*n {
+		fmt.Println()
+	}
 }
